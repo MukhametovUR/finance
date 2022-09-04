@@ -7,39 +7,17 @@ from .models import Post
 from .serializers import PostSerializer
 
 
-class PostAPIView(APIView):
-    def get(self, request):
-        w = Post.objects.all()
-        return Response({'posts': PostSerializer(w, many=True).data})
+class PostAPIList(generics.ListCreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 
-    def post(self, request):
-        serializer = PostSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response({'post': serializer.data})
 
-    def put(self, request, *args, **kwargs):
-        pk = kwargs.get("pk", None)
-        if not pk:
-            return Response({"error": "Method PUT not allowed"})
-        try:
-            instance = Post.objects.get(pk=pk)
-        except:
-            return Response({"error": "Object does not found"})
+class PostAPIUpdate(generics.UpdateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 
-        serializer = PostSerializer(data=request.data, instance=instance)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response({"post": serializer.data})
 
-    def delete(self, request, *args, **kwargs):
-        pk = kwargs.get("pk", None)
-        if not pk:
-            return Response({"error": "Method PUT not allowed"})
-        try:
-            instance = Post.objects.get(pk=pk)
-        except:
-            return Response({"error": "Object does not found"})
-        instance.delete()
-        return Response({"post": "delete post " + str(pk)})
+class PostAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
 

@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from investor.views import PostAPIView
+from investor.views import *
 
 urlpatterns = [
     # path('investor/', include('investor.urls')),
     path('admin/', admin.site.urls),
-    path('api/v1/investlist/', PostAPIView.as_view()),
-    path('api/v1/investlist/<int:pk>/', PostAPIView.as_view())
+    path('api/v1/investlist/', PostAPIList.as_view()),
+    path('api/v1/investlist/<int:pk>/', PostAPIUpdate.as_view()),
+    path('api/v1/investdetail/<int:pk>/', PostAPIDetailView.as_view())
+
 ]
