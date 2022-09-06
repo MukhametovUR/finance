@@ -15,14 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.viewsets import ModelViewSet
 
 from investor.views import *
+from rest_framework import routers
 
+router = routers.SimpleRouter()
+router.register(r'invest', PostViewSet)
 urlpatterns = [
     # path('investor/', include('investor.urls')),
     path('admin/', admin.site.urls),
-    path('api/v1/investlist/', PostAPIList.as_view()),
-    path('api/v1/investlist/<int:pk>/', PostAPIUpdate.as_view()),
-    path('api/v1/investdetail/<int:pk>/', PostAPIDetailView.as_view())
+    path('api/v1/', include(router.urls))  #http://127.0.0.1:8000/api/v1/invest/
+    # path('api/v1/investlist/', PostViewSet.as_view({'get': 'list'})),
+    # path('api/v1/investlist/<int:pk>/', PostViewSet.as_view({'put': 'update'})),
 
 ]
