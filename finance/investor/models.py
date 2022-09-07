@@ -17,6 +17,7 @@ class Post(models.Model):
 
 
 class Category(models.Model):
+    objects = None
     name = models.CharField(max_length=100, db_index=True)
 
     def __str__(self):
