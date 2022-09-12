@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework.viewsets import ModelViewSet
 
 from investor.views import PostAPIList, PostAPIUpdate, PostAPIDestroy
@@ -22,8 +22,11 @@ from investor.views import PostAPIList, PostAPIUpdate, PostAPIDestroy
 urlpatterns = [
 
     path('admin/', admin.site.urls),
+    path('api/v1/invest-auth/', include('rest_framework.urls')),
     path('api/v1/invest/', PostAPIList.as_view()),
     path('api/v1/invest/<int:pk>/',PostAPIUpdate.as_view()),
     path('api/v1/investdelete/<int:pk>/', PostAPIDestroy.as_view()),
+    path('api/v1/auth/', include('djoser.urls')),
+    re_path(r'^auth/', include('djoser.urls.authtoken')),
 ]
 
