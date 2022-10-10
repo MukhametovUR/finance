@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import Axios from 'axios'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -24,5 +25,11 @@ axios.interceptors.response.use(
 
 createApp(App).config.productionTip = false
 
+
+Vue.prototype.$http = Axios
+const token = localStorage.getItem('token')
+if(token) {
+  Vue.prototype.$http.defaults.headers.common['Authorization'] = token
+}
 
 createApp(App).use(store).use(router).mount('#app')
