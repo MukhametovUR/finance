@@ -7,10 +7,15 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "axios-auth-refresh": "^3.3.3",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
+    "vue-cookies": "^1.8.1",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vue-template-compiler": "^2.7.10",
+    "vuex": "^4.0.0",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",
