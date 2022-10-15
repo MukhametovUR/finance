@@ -1,6 +1,9 @@
 <template>
-  <div class="login">
-    <div>
+  <section class="login">
+    <div class="block">
+
+      <Reg_Auth/>
+
       <form @submit.prevent="submit">
         <div>
           <label for="username">Username:</label>
@@ -14,15 +17,20 @@
       </form>
       <p v-if="showError" id="error">Username or Password is incorrect</p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 import { mapActions } from "vuex";
+import Posts from "@/views/Posts copy";
+import Reg_Auth from "@/views/Reg_Auth";
 
 export default {
   name: "Login",
-  components: {},
+  components: {
+    Posts,
+    Reg_Auth,
+  },
   data() {
     return {
       form: {
@@ -80,5 +88,11 @@ input {
 }
 #error {
   color: red;
+}
+
+.block {
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
 }
 </style>
