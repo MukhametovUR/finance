@@ -7,11 +7,17 @@
       <form @submit.prevent="submit">
         <div>
           <label for="username">Username:</label>
-          <input type="text" name="username" v-model="form.username" />
+          <TextInput
+              :type="text"
+              :name="username"
+              v-model="form.username"/>
         </div>
         <div>
           <label for="password">Password:</label>
-          <input type="password" name="password" v-model="form.password" />
+          <TextInput
+              :type="password"
+              :name="password"
+              v-model="form.password"/>
         </div>
         <button type="submit">Submit</button>
       </form>
@@ -24,12 +30,16 @@
 import { mapActions } from "vuex";
 import Posts from "@/views/Posts copy";
 import Reg_Auth from "@/views/Reg_Auth";
+import TextInput from "@/components/TextInput"
+import CustomLabel from "@/components/CustomLabel"
 
 export default {
   name: "Login",
   components: {
     Posts,
     Reg_Auth,
+    TextInput,
+    CustomLabel,
   },
   data() {
     return {
@@ -80,12 +90,6 @@ button[type="submit"]:hover {
   background-color: #45a049;
 }
 
-input {
-  margin: 5px;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-  padding: 10px;
-  border-radius: 30px;
-}
 #error {
   color: red;
 }
