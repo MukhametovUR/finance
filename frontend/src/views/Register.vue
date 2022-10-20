@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import {Action, mapActions} from 'vuex' 
 export default {
   name:'Register',
   components: {},
