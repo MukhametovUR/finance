@@ -16,7 +16,7 @@
             placeholder="Write up..."
           ></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <custom-button type="submit">Submit</custom-button>
       </form>
     </div>
     <div class="posts" v-if="Posts">
@@ -36,10 +36,11 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+import CustomButton from "@/components/CustomButton";
 
 export default {
   name: "Posts",
-  components: {},
+  components: {CustomButton},
   data() {
     return {
       form: {
@@ -75,19 +76,6 @@ export default {
 label {
   padding: 12px 12px 12px 0;
   display: inline-block;
-}
-
-button[type="submit"] {
-  background-color: #4caf50;
-  color: white;
-  padding: 12px 20px;
-  cursor: pointer;
-  border-radius: 30px;
-  margin: 10px;
-}
-
-button[type="submit"]:hover {
-  background-color: #45a049;
 }
 
 input {

@@ -6,22 +6,25 @@
 
       <form @submit.prevent="submit">
         <div>
-          <label for="username">Username:</label>
-          <text-input :type="'text'"
+          <label class="label_input"
+                 for="username">Username:</label>
+          <text-input id="username"
+                      :type="'text'"
                       :name="'username'"
                       :placeholder="'Введите логин'"
                       v-model="form.username"/>
         </div>
         <div>
-          <label for="password">Password:</label>
-          <text-input :type="'password'"
+          <label class="label_input" for="password">Password:</label>
+          <text-input id="password"
+                      :type="'password'"
                       :name="'password'"
                       :placeholder="'Введите пароль'"
                       v-model="form.password"/>
         </div>
-        <button type="submit">Submit</button>
+        <custom-button type="submit">войти</custom-button>
       </form>
-      <p v-if="showError" id="error">Username or Password is incorrect</p>
+      <p v-if="showError" id="error">Логин или пароль некорректны</p>
     </div>
   </section>
 </template>
@@ -30,10 +33,12 @@
 import { mapActions } from "vuex";
 import Posts from "@/views/Posts copy";
 import Reg_Auth from "@/views/Reg_Auth";
+import CustomButton from "@/components/CustomButton";
 
 export default {
   name: "Login",
   components: {
+    CustomButton,
     Posts,
     Reg_Auth,
   },
@@ -74,24 +79,6 @@ label {
   display: inline-block;
 }
 
-button[type="submit"] {
-  background-color: #4caf50;
-  color: white;
-  padding: 12px 20px;
-  cursor: pointer;
-  border-radius: 30px;
-}
-
-button[type="submit"]:hover {
-  background-color: #45a049;
-}
-
-input {
-  margin: 5px;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-  padding: 10px;
-  border-radius: 30px;
-}
 #error {
   color: red;
 }

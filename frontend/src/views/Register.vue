@@ -14,17 +14,18 @@
           <label for="password">Password:</label>
           <input type="text" name="password" v-model="form.password">
         </div>
-        <button type="submit">Submit</button>
+        <custom-button type="submit">Submit</custom-button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import {Action, mapActions} from 'vuex' 
+import {Action, mapActions} from 'vuex'
+import CustomButton from "@/components/CustomButton";
 export default {
   name:'Register',
-  components: {},
+  components: {CustomButton},
   data() {
     return {
       form: {
@@ -58,16 +59,7 @@ export default {
     padding: 12px 12px 12px 0;
     display: inline-block;
   }
-  button[type=submit] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    cursor: pointer;
-    border-radius:30px;
-  }
-  button[type=submit]:hover {
-    background-color: #45a049;
-  }
+
   input {
     margin: 5px;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
