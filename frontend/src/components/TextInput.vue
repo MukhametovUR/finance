@@ -1,5 +1,6 @@
 <template>
-  <input  type="type"
+  <input  class="input_text"
+          type="type"
           name="name"
           :value="modelValue"
           @input="$emit('update:modelValue', $event.target.value)"
@@ -17,12 +18,12 @@ export default {
     'placeholder': String,
     'type': {
       type: String,
-      default: 'text'
+      default: ''
     },
   }
 }
 </script>
 
-<style>
-@import "@/assets/styles/styles.scss";
+<style scoped lang="sass">
+@import "@/assets/styles/styles.scss"
 </style>

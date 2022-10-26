@@ -1,5 +1,44 @@
 @import "variables.scss";
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 body {
   color: $main-color;
+}
+
+.input_text {
+  position: relative;
+  height: 40px;
+  width: 250px;
+  border-radius: 4px;
+  background-color: #F8F1FF;
+  outline:none;
+  border: none;
+  margin-bottom: 9px;
+}
+
+.input_text:hover {
+  outline:none;
+  -webkit-box-shadow: 1px 4px 5px 0px rgba(34, 60, 80, 0.39);
+  -moz-box-shadow: 1px 4px 5px 0px rgba(34, 60, 80, 0.39);
+  box-shadow: 1px 4px 5px 0px rgba(34, 60, 80, 0.39);
+}
+
+.button[type="submit"] {
+  background-color: $button-color;
+  color: white;
+  width: 250px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 7px;
+}
+
+.button[type="submit"]:hover {
+  background-color: #8f4acb;
+}
+
+.label_input {
+  margin: -10px 0 0 5px;
+  z-index: 1;
+  position: absolute;
+  font-size: 8px;
 }
