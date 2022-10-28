@@ -37,43 +37,6 @@ export default {
 }
 </script>
 
-<style>
-  #nav {
-    padding: 30px;
-  }
-  #nav a {
-    font-weight: bold;
-    color: #2c3e50;
-  }
-  a:hover {
-    cursor: pointer;
-  }
-  #nav a.router-link-exact-active {
-    color: #42b983;
-  }
-
-  .block {
-    border: 1px solid;
-    border-radius: 24px;
-    padding: 20px 0;
-    display: flex;
-    margin: 0 20%;
-
-  }
-
-  .block_content {
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .reg_auth__item {
-    padding: 0 10px;
-  }
-
-  .block_content__text {
-    color: #000000;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
+<style scoped lang="sass">
+@import "@/assets/styles/styles.scss"
   </style>

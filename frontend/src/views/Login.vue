@@ -2,6 +2,7 @@
   <section class="login">
     <div class="block">
 
+      <div class="content">
       <Reg_Auth/>
 
       <form @submit.prevent="submit">
@@ -24,6 +25,7 @@
         </div>
         <custom-button type="submit">войти</custom-button>
       </form>
+      </div>
       <p v-if="showError" id="error">Логин или пароль некорректны</p>
     </div>
   </section>

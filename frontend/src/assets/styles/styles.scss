@@ -7,12 +7,17 @@ body {
 .input_text {
   position: relative;
   height: 40px;
-  width: 250px;
+  width: 100%;
   border-radius: 4px;
   background-color: #F8F1FF;
   outline:none;
   border: none;
   margin-bottom: 9px;
+}
+.content {
+    padding:80px;
+    max-width: 400px;
+    align-self:center;
 }
 
 .input_text:hover {
@@ -25,7 +30,7 @@ body {
 .button[type="submit"] {
   background-color: $button-color;
   color: white;
-  width: 250px;
+  width: 100%;
   height: 40px;
   cursor: pointer;
   border: none;
@@ -41,4 +46,65 @@ body {
   z-index: 1;
   position: absolute;
   font-size: 8px;
+}
+
+  #nav {
+    padding: 30px;
+  }
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  a:hover {
+    cursor: pointer;
+  }
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
+
+  .block {
+    border: 1px solid;
+    border-radius: 24px;
+    padding: 20px 0;
+    display: flex;
+    margin: 0 20%;
+
+  }
+
+  .block_content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .reg_auth__item {
+    padding: 0 10px;
+  }
+
+  .block_content__text {
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+
+.select_reg_auth {
+    display:flex;
+    text-aligns: flex-start;
+}
+
+.reg_auth__items {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  margin: 10px;
+  padding: 5px;
+}
+
+.reg_auth__items:hover {
+  -webkit-box-shadow: 1px 4px 5px 0px rgba(34, 60, 80, 0.39);
+  -moz-box-shadow: 1px 4px 5px 0px rgba(34, 60, 80, 0.39);
+  box-shadow: 1px 4px 5px 0px rgba(34, 60, 80, 0.39);
 }
