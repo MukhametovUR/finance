@@ -15,15 +15,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.select_reg_auth {
+<style scoped lang="sass">
 
-}
-
-.reg_auth__items {
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 14px;
-}
 </style>

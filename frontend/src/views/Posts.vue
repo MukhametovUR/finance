@@ -16,7 +16,7 @@
             placeholder="Write up..."
           ></textarea>
         </div>
-        <custom-button type="submit">Submit</custom-button>
+        <custom-button type="submit">Добавить пост</custom-button>
       </form>
     </div>
     <div class="posts" v-if="Posts">
