@@ -71,23 +71,6 @@ export default {
 };
 </script>
 
-<style scoped>
-* {
-  box-sizing: border-box;
-}
-
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-#error {
-  color: red;
-}
-
-.block {
-  border: 1px solid;
-  display: flex;
-  flex-direction: column;
-}
+<style scoped lang="sass">
+@import '@/assets/styles/styles.scss'
 </style>

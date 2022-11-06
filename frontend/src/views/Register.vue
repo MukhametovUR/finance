@@ -1,31 +1,54 @@
 <template>
-  <div class="register">
+  <section>
+    <div class="block">
+      <div class="content">
+        <Reg_Auth/>
+        <form @submit="prevent.submit">
+          <div>
+            <label class="label_input" for="username">Username:</label>
+            <text-input id="username"
+                        :type="'text'"
+                        :name="'username'"
+                        :placeholder="'Введите логин'"
+                        v-model="form.username"/>
+          </div>
+          <div>
+            <label class="label_input" for="full_name">Full Name:</label>
+            <text-input id="username"
+                        :type="'text'"
+                        :name="'full_name'"
+                        :placeholder="'Введите логин'"
+                        v-model="form.full_name"/>
+          </div>
+          <div>
+            <label class="label_input" for="password">Password:</label>
+            <text-input id="username"
+                        :type="'text'"
+                        :name="'full_name'"
+                        :placeholder="'Введите логин'"
+                        v-model="form.password"/>
+          </div>
+          <custom-button type="submit">Submit</custom-button>
+        </form>
+      </div>
     <div>
-      <form @submit="prevent.submit">
-        <div>
-          <label for="username">Username:</label>
-          <input type="text" name="username" v-model="form.username">
-        </div>
-        <div>
-          <label for="full_name">Full Name:</label>
-          <input type="text" name="full_name" v-model="form.full_name">
-        </div>
-        <div>
-          <label for="password">Password:</label>
-          <input type="text" name="password" v-model="form.password">
-        </div>
-        <custom-button type="submit">Submit</custom-button>
-      </form>
-    </div>
+
   </div>
+    </div>
+  </section>
 </template>
 
 <script>
 import {Action, mapActions} from 'vuex'
 import CustomButton from "@/components/CustomButton";
+import Reg_Auth from "@/views/Reg_Auth";
+
 export default {
   name:'Register',
-  components: {CustomButton},
+  components: {
+    CustomButton,
+    Reg_Auth,
+  },
   data() {
     return {
       form: {
@@ -51,22 +74,6 @@ export default {
 }
 </script>
 
-<style scoped>
-  * {
-    box-sizing: border-box;
-  }
-  label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-  }
-
-  input {
-    margin: 5px;
-    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-    padding:10px;
-    border-radius:30px;
-  }
-  #error {
-    color: red;
-  }
-  </style>
+<style scoped lang="sass">
+@import '@/assets/styles/styles.scss'
+</style>
